@@ -63,6 +63,11 @@ function calculate(expression) {
     }
   }
 
+  if (tokens.length < 2) {
+    alert('Too Few Characters')
+    return
+  }
+
   if (tokens.length === 2) {
     num1 = Number(tokens[1])
     operator = tokens[0]
@@ -71,9 +76,15 @@ function calculate(expression) {
       alert('Invalid Number')
       return
     }
+
     if (operator === 'sqrt') {
       return sqrt(num1)
     }
+  }
+
+  if (tokens.length > 3) {
+    alert('Too Many Characters')
+    return
   }
 }
 
