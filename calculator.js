@@ -29,27 +29,51 @@ function sqrt(num) {
 function calculate(expression) {
   const tokens = expression.split(' ')
 
-  const operator = tokens[1]
-  const num1 = Number(tokens[0])
-  const num2 = Number(tokens[2])
+  let num1
+  let num2
+  let operator
 
-  if (operator === '+') {
-    return add(num1, num2)
+  if (tokens.length === 3) {
+    num1 = Number(tokens[0])
+    operator = tokens[1]
+    num2 = Number(tokens[2])
+
+    if (Number.isNaN(num1) || Number.isNaN(num2)) {
+      alert('Invalid Number')
+      return
+    }
+  
+    if (operator === '+') {
+      return add(num1, num2)
+    }
+    if (operator === '-') {
+      return subtract(num1, num2)
+    }
+    if (operator === '*') {
+      return multiply(num1, num2)
+    }
+    if (operator === '/') {
+      return divide(num1, num2)
+    }
+    if (operator === '^') {
+      return power(num1, num2)
+    }
+    if (operator === '%') {
+      return mod(num1, num2)
+    }
   }
-  if (operator === '-') {
-    return subtract(num1, num2)
-  }
-  if (operator === '*') {
-    return multiply(num1, num2)
-  }
-  if (operator === '/') {
-    return divide(num1, num2)
-  }
-  if (operator === '^') {
-    return power(num1, num2)
-  }
-  if (operator === '%') {
-    return mod(num1, num2)
+
+  if (tokens.length === 2) {
+    num1 = Number(tokens[1])
+    operator = tokens[0]
+    
+    if (Number.isNaN(num1)) {
+      alert('Invalid Number')
+      return
+    }
+    if (operator === 'sqrt') {
+      return sqrt(num1)
+    }
   }
 }
 
