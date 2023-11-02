@@ -1,9 +1,9 @@
-function add(firstNum, secondNum) {
-  return Number(firstNum) + Number(secondNum)
+function add(num1, num2) {
+  return num1 + num2
 }
 
-function subtract(firstNum, secondNum) {
-  return firstNum - secondNum
+function subtract(num1, num2) {
+  return num1 - num2
 }
 
 function multiply(num1, num2) {
@@ -30,8 +30,8 @@ function calculate(expression) {
   const tokens = expression.split(' ')
 
   const operator = tokens[1]
-  const num1 = tokens[0]
-  const num2 = tokens[2]
+  const num1 = Number(tokens[0])
+  const num2 = Number(tokens[2])
 
   if (operator === '+') {
     return add(num1, num2)
