@@ -1,4 +1,57 @@
-function calculate(expression) {}
+function add(firstNum, secondNum) {
+  return Number(firstNum) + Number(secondNum)
+}
+
+function subtract(firstNum, secondNum) {
+  return firstNum - secondNum
+}
+
+function multiply(num1, num2) {
+  return num1 * num2
+}
+
+function divide(num1, num2) {
+  return num1 / num2
+}
+
+function power(num1, num2) {
+  return num1 ** num2
+}
+
+function mod(num1, num2) {
+  return num1 % num2
+}
+
+function sqrt(num) {
+  return num ** 0.5
+}
+
+function calculate(expression) {
+  const tokens = expression.split(' ')
+
+  const operator = tokens[1]
+  const num1 = tokens[0]
+  const num2 = tokens[2]
+
+  if (operator === '+') {
+    return add(num1, num2)
+  }
+  if (operator === '-') {
+    return subtract(num1, num2)
+  }
+  if (operator === '*') {
+    return multiply(num1, num2)
+  }
+  if (operator === '/') {
+    return divide(num1, num2)
+  }
+  if (operator === '^') {
+    return power(num1, num2)
+  }
+  if (operator === '%') {
+    return mod(num1, num2)
+  }
+}
 
 /* **************** DO NOT EDIT THE CODE BELOW **************** */
 /* ************************************************************ */
